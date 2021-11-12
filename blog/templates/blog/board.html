@@ -1,0 +1,24 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <h1>Leaderboard</h1>
+    {% for rank in rankings %}
+        <article class="media content-section">
+            <div class="media-body">
+            <div class="chess-metadata">
+                <a class="chess-rank" >{{ rank.rank }}</a>
+                <small class="chess-points">{{ rank.points }} pts</small>
+            </div>
+            <h2><a class="Chess-name">{{ rank.name }}</a></h2>
+            <p class="Chess-name">Win: {{ rank.win }}</p>
+            <p class="Chess-name">Lose: {{ rank.lose }}</p>
+            
+            </div>
+        </article>
+        
+        <!-- <h1>Name: {{rank.name}}</h1>
+        <p>Rank: {{rank.rank}} </p>
+        <p>Points: {{ rank.points }} </p>
+        <p>ID: {{rank.id}}</p> -->
+    {% endfor %}
+{% endblock content%}
+
